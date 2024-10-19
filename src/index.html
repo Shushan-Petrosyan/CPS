@@ -1,0 +1,609 @@
+<!-- src/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CPS</title>
+
+    <!-- Link to the compiled CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="menu-container">
+      <div class="content">
+        <div>
+          <div class="logo-section">
+            <div class="close-section">
+              <div id="close" class="icon-container" onclick="closeMenu()">
+                <img src="./assets/close.svg" alt="close" />
+              </div>
+              <img src="./assets/Logo.svg" alt="logo" />
+            </div>
+            <div class="icon-container">
+              <img src="./assets/search.svg" alt="search" />
+            </div>
+          </div>
+          <ul class="navigation">
+            <li>
+              <div class="selected-decoration"></div>
+              Ремонт техники
+            </li>
+            <li class="selected">
+              <div class="selected-decoration"></div>
+              Услуги и сервисы
+            </li>
+            <li>
+              <div class="selected-decoration"></div>
+              Корпоративным клиентам
+            </li>
+            <li>
+              <div class="selected-decoration"></div>
+              Продавцам техники
+            </li>
+            <li>
+              <div class="selected-decoration"></div>
+              Партнерам
+            </li>
+            <li>
+              <div class="selected-decoration"></div>
+              Производителям
+            </li>
+            <li>
+              <div class="selected-decoration"></div>
+              Наши сервисные центры
+            </li>
+            <li>
+              <div class="selected-decoration"></div>
+              Контакты
+            </li>
+          </ul>
+        </div>
+        <div class="info">
+          <div class="icons">
+            <div class="icon-container" onclick="onPhoneClick()">
+              <img src="./assets/phone.svg" alt="phone" />
+            </div>
+            <div class="icon-container" onclick="onSendMailClick()">
+              <img src="./assets/mail.svg" alt="mail" />
+            </div>
+            <div class="icon-container">
+              <img src="./assets/account.svg" alt="account" />
+            </div>
+          </div>
+          <p class="mail">mail@cps.com</p>
+          <p class="phone">8 800 890 8900</p>
+          <ul class="languages">
+            <li class="selected">RU</li>
+            <li>EN</li>
+            <li>CH</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="blur-section" onclick="closeMenu()"></div>
+    <header class="header">
+      <div class="block">
+        <div id="menu" class="icon-container" onclick="openMenu()">
+          <img src="./assets/icon.svg" alt="menu" />
+        </div>
+        <div class="blank mobile-hidden"></div>
+        <img src="./assets/Logo.svg" alt="logo" />
+      </div>
+      <div class="block">
+        <div class="icon-items mobile-hidden">
+          <div class="icon-container" onclick="onPhoneClick()">
+            <img src="./assets/phone.svg" alt="phone" />
+          </div>
+          <div class="icon-container" onclick="onSendMailClick()">
+            <img src="./assets/mail.svg" alt="mail" />
+          </div>
+          <div class="icon-container">
+            <img src="./assets/account.svg" alt="account" />
+          </div>
+        </div>
+        <div class="blank"></div>
+        <div class="icon-items">
+          <div class="icon-container">
+            <img src="./assets/tech.svg" alt="tech" />
+          </div>
+          <div class="icon-container">
+            <img src="./assets/find.svg" alt="find" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="modals-container" id="modals-container">
+      <div id="close-modal" class="icon-container" onclick="closeModals()">
+        <img src="./assets/close.svg" alt="close" />
+      </div>
+      <div class="title">
+        <div class="title-decoration"></div>
+        <h4>Обратная связь</h4>
+      </div>
+      <input placeholder="Имя" />
+      <input placeholder="Телефон" type="number" />
+      <input placeholder="Электронная почта" />
+      <textarea placeholder="Сообщение"></textarea>
+      <p>
+        Нажимая “отправить”, вы даете согласие на
+        <span class="pink">обработку персональных данных</span> и соглашаетесь с
+        нашей <span class="pink">политикой конфиденциальности</span>
+      </p>
+      <button>
+        ОТПРАВИТЬ <img src="./assets/arrow-right.svg" alt="arrow-right" />
+      </button>
+    </div>
+    <div class="modals-container" id="modals-container-phone">
+      <div id="close-modal" class="icon-container" onclick="closeModals()">
+        <img src="./assets/close.svg" alt="close" />
+      </div>
+      <div class="title">
+        <div class="title-decoration"></div>
+        <h4>Заказать звонок</h4>
+      </div>
+      <input placeholder="Телефон" type="number" />
+      <p>
+        Нажимая “отправить”, вы даете согласие на
+        <span class="pink">обработку персональных данных</span> и соглашаетесь с
+        нашей <span class="pink">политикой конфиденциальности</span>
+      </p>
+      <button>
+        ОТПРАВИТЬ <img src="./assets/arrow-right.svg" alt="arrow-right" />
+      </button>
+    </div>
+    <div id="blur-section-modal" onclick="closeModals()"></div>
+    <main>
+      <div class="main-content">
+        <div class="title-container">
+          <div class="title">
+            <div class="title-decoration"></div>
+            <h1>Услуги и сервисы</h1>
+          </div>
+          <div class="bid">
+            <div class="bid-item">
+              <div>Оставить заявку</div>
+              <div class="icon-container">
+                <img src="./assets/tech.svg" alt="tech" />
+              </div>
+            </div>
+            <div class="bid-item">
+              <div>Статус ремонта</div>
+              <div class="icon-container">
+                <img src="./assets/find.svg" alt="find" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul class="nav">
+          <li class="nav-item nav-item-selected">Ремонтируемые бренды</li>
+          <li class="nav-item">Дополнительные услуги</li>
+          <li class="nav-item">Цены на услуги</li>
+          <li class="nav-item">Адреса сервисных центров</li>
+          <li class="nav-item">Специальные цены</li>
+        </ul>
+        <div class="reviews">Отзывы</div>
+        <div class="about">
+          <div class="about-text">
+            Мы являемся авторизованным сервисным центром по ремонту техники
+            Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
+            официальной гарантией производителя.
+            <br />
+            <br />
+            Мы успешно работаем с 1992 года и заслужили репутацию надежного
+            партнера
+            <br />
+            <div id="read-more" class="show-more">
+              <img src="./assets/arrows.svg" alt="arrows" />
+              <div>Читать далее</div>
+            </div>
+            <div class="show-more-text">
+              Мы являемся авторизованным сервисным центром по ремонту техники
+              Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
+              официальной гарантией производителя.
+              <br />
+              <br />
+              Мы успешно работаем с 1992 года и заслужили репутацию надежного
+              партнера
+            </div>
+          </div>
+          <img src="./assets/about.png" loading="lazy" alt="about" />
+        </div>
+      </div>
+      <div class="section">
+        <div class="line"></div>
+        <div class="section-text"><p>Ремонт техники различных брендов</p></div>
+      </div>
+      <div class="brands-container">
+        <div class="brands">
+          <div class="brands-item">
+            <img src="./assets/Bitmap.png" alt="brand-item" />
+            <div class="brands-item-circle">
+              <img src="./assets/arrow-colored.svg" alt="arrow" />
+            </div>
+          </div>
+          <div class="brands-item">
+            <img src="./assets/Bitmap (1).png" alt="brand-item" />
+            <div class="brands-item-circle">
+              <img src="./assets/arrow-colored.svg" alt="arrow" />
+            </div>
+          </div>
+          <div class="brands-item">
+            <img src="./assets/Bitmap (2).png" alt="brand-item" />
+            <div class="brands-item-circle">
+              <img src="./assets/arrow-colored.svg" alt="arrow" />
+            </div>
+          </div>
+          <div class="brands-item">
+            <img src="./assets/Bitmap (3).png" alt="brand-item" />
+            <div class="brands-item-circle">
+              <img src="./assets/arrow-colored.svg" alt="arrow" />
+            </div>
+          </div>
+          <div class="brands-item">
+            <img src="./assets/Bitmap (4).png" alt="brand-item" />
+            <div class="brands-item-circle">
+              <img src="./assets/arrow-colored.svg" alt="arrow" />
+            </div>
+          </div>
+          <div class="brands-item">
+            <img src="./assets/Bitmap (5).png" alt="brand-item" />
+            <div class="brands-item-circle">
+              <img src="./assets/arrow-colored.svg" alt="arrow" />
+            </div>
+          </div>
+          <div class="brands-item">
+            <img src="./assets/Bitmap (6).png" alt="brand-item" />
+            <div class="brands-item-circle">
+              <img src="./assets/arrow-colored.svg" alt="arrow" />
+            </div>
+          </div>
+          <div class="brands-item">
+            <img src="./assets/Bitmap (7).png" alt="brand-item" />
+            <div class="brands-item-circle">
+              <img src="./assets/arrow-colored.svg" alt="arrow" />
+            </div>
+          </div>
+          <div class="brands-item">
+            <img src="./assets/Bitmap.png" alt="brand-item" />
+            <div class="brands-item-circle">
+              <img src="./assets/arrow-colored.svg" alt="arrow" />
+            </div>
+          </div>
+          <div class="brands-item">
+            <img src="./assets/Bitmap (1).png" alt="brand-item" />
+            <div class="brands-item-circle">
+              <img src="./assets/arrow-colored.svg" alt="arrow" />
+            </div>
+          </div>
+          <div class="brands-item">
+            <img src="./assets/Bitmap (2).png" alt="brand-item" />
+            <div class="brands-item-circle">
+              <img src="./assets/arrow-colored.svg" alt="arrow" />
+            </div>
+          </div>
+          <div class="brands-item">
+            <img src="./assets/Bitmap (3).png" alt="brand-item" />
+            <div class="brands-item-circle">
+              <img src="./assets/arrow-colored.svg" alt="arrow" />
+            </div>
+          </div>
+          <div class="brands-item">
+            <img src="./assets/Bitmap (4).png" alt="brand-item" />
+            <div class="brands-item-circle">
+              <img src="./assets/arrow-colored.svg" alt="arrow" />
+            </div>
+          </div>
+          <div class="brands-item">
+            <img src="./assets/Bitmap (5).png" alt="brand-item" />
+            <div class="brands-item-circle">
+              <img src="./assets/arrow-colored.svg" alt="arrow" />
+            </div>
+          </div>
+        </div>
+        <div id="show-all-brands" class="show-more">
+          <img src="./assets/arrows.svg" alt="arrows" />
+          <div id="show-brand-text">Показать все</div>
+        </div>
+        <div class="dots">
+          <div class="dots-item dots-item-active"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+          <div class="dots-item"></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="line"></div>
+        <div class="section-text"><p>Ремонт различных видов техники</p></div>
+      </div>
+      <div class="components-container">
+        <div class="components">
+          <div class="components-item">
+            <div>Ремонт ноутбуков</div>
+            <div class="components-item-circle">
+              <div class="brands-item-circle">
+                <img src="./assets/arrow-colored.svg" alt="arrow" />
+              </div>
+            </div>
+          </div>
+          <div class="components-item">
+            <div>Ремонт планшетов</div>
+            <div class="components-item-circle">
+              <div class="brands-item-circle">
+                <img src="./assets/arrow-colored.svg" alt="arrow" />
+              </div>
+            </div>
+          </div>
+          <div class="components-item">
+            <div>Ремонт ПК</div>
+            <div class="components-item-circle">
+              <div class="brands-item-circle">
+                <img src="./assets/arrow-colored.svg" alt="arrow" />
+              </div>
+            </div>
+          </div>
+          <div class="components-item">
+            <div>Ремонт мониторов</div>
+            <div class="components-item-circle">
+              <div class="brands-item-circle">
+                <img src="./assets/arrow-colored.svg" alt="arrow" />
+              </div>
+            </div>
+          </div>
+          <div class="components-item">
+            <div>Ремонт ноутбуков</div>
+            <div class="components-item-circle">
+              <div class="brands-item-circle">
+                <img src="./assets/arrow-colored.svg" alt="arrow" />
+              </div>
+            </div>
+          </div>
+          <div class="components-item">
+            <div>Ремонт планшетов</div>
+            <div class="components-item-circle">
+              <div class="brands-item-circle">
+                <img src="./assets/arrow-colored.svg" alt="arrow" />
+              </div>
+            </div>
+          </div>
+          <div class="components-item">
+            <div>Ремонт ПК</div>
+            <div class="components-item-circle">
+              <div class="brands-item-circle">
+                <img src="./assets/arrow-colored.svg" alt="arrow" />
+              </div>
+            </div>
+          </div>
+          <div class="components-item">
+            <div>Ремонт мониторов</div>
+            <div class="components-item-circle">
+              <div class="brands-item-circle">
+                <img src="./assets/arrow-colored.svg" alt="arrow" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="show-all-components" class="show-more">
+          <img src="./assets/arrows.svg" alt="arrows" />
+          <div id="show-components-text">Показать все</div>
+        </div>
+        <div class="dots">
+          <div class="dots-item-second dots-item-active-second"></div>
+          <div class="dots-item-second"></div>
+          <div class="dots-item-second"></div>
+          <div class="dots-item-second"></div>
+          <div class="dots-item-second"></div>
+          <div class="dots-item-second"></div>
+          <div class="dots-item-second"></div>
+          <div class="dots-item-second"></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="line"></div>
+        <div class="section-text"><p>цены на услуги</p></div>
+      </div>
+      <div class="services-container">
+        <table class="services-table">
+          <thead>
+            <tr>
+              <th>Ремонтные услуги</th>
+              <th>Цена</th>
+              <th>Срок</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Диагностика</td>
+              <td>Бесплатно</td>
+              <td>30 мин</td>
+              <td>
+                <button onclick="onPhoneClick()">
+                  ЗАКАЗАТЬ
+                  <img src="./assets/arrow-right.svg" alt="arrow-right" />
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Замена дисплея</td>
+              <td>1000 ₽</td>
+              <td>30-120 мин</td>
+              <td>
+                <button onclick="onPhoneClick()">
+                  ЗАКАЗАТЬ
+                  <img src="./assets/arrow-right.svg" alt="arrow-right" />
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Замена полифонического динамика</td>
+              <td>1000 ₽</td>
+              <td>30-120 мин</td>
+              <td>
+                <button onclick="onPhoneClick()">
+                  ЗАКАЗАТЬ
+                  <img src="./assets/arrow-right.svg" alt="arrow-right" />
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Тестирование с выдачей технического заключения</td>
+              <td>1000 ₽</td>
+              <td>30-120 мин</td>
+              <td>
+                <button onclick="onPhoneClick()">
+                  ЗАКАЗАТЬ
+                  <img src="./assets/arrow-right.svg" alt="arrow-right" />
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Замена программного обеспечения</td>
+              <td>1000 ₽</td>
+              <td>30-120 мин</td>
+              <td>
+                <button onclick="onPhoneClick()">
+                  ЗАКАЗАТЬ
+                  <img src="./assets/arrow-right.svg" alt="arrow-right" />
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Mobile View -->
+        <div class="services-slider">
+          <div class="service-card">
+            <div class="service-block">
+              <p class="text-gray">Ремонтные услуги</p>
+              <p>Тестирование с выдачей технического заключения</p>
+            </div>
+            <div class="service-block">
+              <p class="text-gray">Цена</p>
+              <p>Бесплатно</p>
+            </div>
+            <div class="service-block">
+              <p class="text-gray">Срок</p>
+              <p>30-120 мин</p>
+            </div>
+            <button onclick="onPhoneClick()">
+              ЗАКАЗАТЬ <img src="./assets/arrow-right.svg" alt="arrow-right" />
+            </button>
+          </div>
+          <div class="service-card">
+            <div class="service-block">
+              <p class="text-gray">Ремонтные услуги</p>
+              <p>Тестирование с выдачей технического заключения</p>
+            </div>
+            <div class="service-block">
+              <p class="text-gray">Цена</p>
+              <p>Бесплатно</p>
+            </div>
+            <div class="service-block">
+              <p class="text-gray">Срок</p>
+              <p>30-120 мин</p>
+            </div>
+            <button onclick="onPhoneClick()">
+              ЗАКАЗАТЬ <img src="./assets/arrow-right.svg" alt="arrow-right" />
+            </button>
+          </div>
+          <div class="service-card">
+            <div class="service-block">
+              <p class="text-gray">Ремонтные услуги</p>
+              <p>Тестирование с выдачей технического заключения</p>
+            </div>
+            <div class="service-block">
+              <p class="text-gray">Цена</p>
+              <p>Бесплатно</p>
+            </div>
+            <div class="service-block">
+              <p class="text-gray">Срок</p>
+              <p>30-120 мин</p>
+            </div>
+            <button onclick="onPhoneClick()">
+              ЗАКАЗАТЬ <img src="./assets/arrow-right.svg" alt="arrow-right" />
+            </button>
+          </div>
+          <div class="service-card">
+            <div class="service-block">
+              <p class="text-gray">Ремонтные услуги</p>
+              <p>Тестирование с выдачей технического заключения</p>
+            </div>
+            <div class="service-block">
+              <p class="text-gray">Цена</p>
+              <p>Бесплатно</p>
+            </div>
+            <div class="service-block">
+              <p class="text-gray">Срок</p>
+              <p>30-120 мин</p>
+            </div>
+            <button onclick="onPhoneClick()">
+              ЗАКАЗАТЬ <img src="./assets/arrow-right.svg" alt="arrow-right" />
+            </button>
+          </div>
+          <div class="service-card">
+            <div class="service-block">
+              <p class="text-gray">Ремонтные услуги</p>
+              <p>Тестирование с выдачей технического заключения</p>
+            </div>
+            <div class="service-block">
+              <p class="text-gray">Цена</p>
+              <p>Бесплатно</p>
+            </div>
+            <div class="service-block">
+              <p class="text-gray">Срок</p>
+              <p>30-120 мин</p>
+            </div>
+            <button onclick="onPhoneClick()">
+              ЗАКАЗАТЬ <img src="./assets/arrow-right.svg" alt="arrow-right" />
+            </button>
+          </div>
+        </div>
+        <div class="dots">
+          <div class="dots-item-third dots-item-active-third"></div>
+          <div class="dots-item-third"></div>
+          <div class="dots-item-third"></div>
+          <div class="dots-item-third"></div>
+          <div class="dots-item-third"></div>
+        </div>
+        <p class="prices">
+          Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную
+          услугу. Для получения коммерческого предложения на постоянное
+          обслуживание, оставьте заявку.
+        </p>
+        <p class="get-requests">
+          Получить коммерческое предложение
+          <img src="assets/arrow-colored.svg" alt="get-requests" />
+        </p>
+      </div>
+      <footer>
+        <div class="footer-container">
+          <div class="footer-item">
+            <p>© 2019 CPS</p>
+            <p>Разработано командой Apesong</p>
+          </div>
+          <div class="footer-item">
+            <p>Политика конфиденциальности</p>
+          </div>
+          <div class="footer-item">
+            <p>Информация, размещенная на данной странице,</p>
+            <p>не является публичной офертой</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

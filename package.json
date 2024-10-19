@@ -1,0 +1,21 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "scss": "sass src/scss/main.scss src/css/main.css --watch",
+    "start": "live-server src",
+    "build": "sass src/scss/styles.scss src/css/styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.79.5"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
