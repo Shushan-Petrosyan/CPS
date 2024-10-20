@@ -116,43 +116,47 @@
       </div>
     </header>
     <div class="modals-container" id="modals-container">
-      <div id="close-modal" class="icon-container" onclick="closeModals()">
-        <img src="./assets/close.svg" alt="close" />
+      <div class="modals-content">
+        <div id="close-modal" class="icon-container" onclick="closeModals()">
+          <img src="./assets/close.svg" alt="close" />
+        </div>
+        <div class="title">
+          <div class="title-decoration"></div>
+          <h4>Обратная связь</h4>
+        </div>
+        <input placeholder="Имя" />
+        <input placeholder="Телефон" type="number" />
+        <input placeholder="Электронная почта" />
+        <textarea placeholder="Сообщение"></textarea>
+        <p>
+          Нажимая “отправить”, вы даете согласие на
+          <span class="pink">обработку персональных данных</span> и соглашаетесь
+          с нашей <span class="pink">политикой конфиденциальности</span>
+        </p>
+        <button>
+          ОТПРАВИТЬ <img src="./assets/arrow-right.svg" alt="arrow-right" />
+        </button>
       </div>
-      <div class="title">
-        <div class="title-decoration"></div>
-        <h4>Обратная связь</h4>
-      </div>
-      <input placeholder="Имя" />
-      <input placeholder="Телефон" type="number" />
-      <input placeholder="Электронная почта" />
-      <textarea placeholder="Сообщение"></textarea>
-      <p>
-        Нажимая “отправить”, вы даете согласие на
-        <span class="pink">обработку персональных данных</span> и соглашаетесь с
-        нашей <span class="pink">политикой конфиденциальности</span>
-      </p>
-      <button>
-        ОТПРАВИТЬ <img src="./assets/arrow-right.svg" alt="arrow-right" />
-      </button>
     </div>
     <div class="modals-container" id="modals-container-phone">
-      <div id="close-modal" class="icon-container" onclick="closeModals()">
-        <img src="./assets/close.svg" alt="close" />
+      <div class="modals-content">
+        <div id="close-modal" class="icon-container" onclick="closeModals()">
+          <img src="./assets/close.svg" alt="close" />
+        </div>
+        <div class="title">
+          <div class="title-decoration"></div>
+          <h4>Заказать звонок</h4>
+        </div>
+        <input placeholder="Телефон" type="number" />
+        <p>
+          Нажимая “отправить”, вы даете согласие на
+          <span class="pink">обработку персональных данных</span> и соглашаетесь
+          с нашей <span class="pink">политикой конфиденциальности</span>
+        </p>
+        <button>
+          ОТПРАВИТЬ <img src="./assets/arrow-right.svg" alt="arrow-right" />
+        </button>
       </div>
-      <div class="title">
-        <div class="title-decoration"></div>
-        <h4>Заказать звонок</h4>
-      </div>
-      <input placeholder="Телефон" type="number" />
-      <p>
-        Нажимая “отправить”, вы даете согласие на
-        <span class="pink">обработку персональных данных</span> и соглашаетесь с
-        нашей <span class="pink">политикой конфиденциальности</span>
-      </p>
-      <button>
-        ОТПРАВИТЬ <img src="./assets/arrow-right.svg" alt="arrow-right" />
-      </button>
     </div>
     <div id="blur-section-modal" onclick="closeModals()"></div>
     <main>

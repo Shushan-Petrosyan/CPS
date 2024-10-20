@@ -41,6 +41,9 @@
   }
   .nav {
     width: 1200px;
+    position: relative;
+    left: -34px;
+    padding-left: 34px;
     max-width: calc(100% + 34px);
     margin-top: 17px;
     overflow-x: auto;

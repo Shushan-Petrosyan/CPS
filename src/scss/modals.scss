@@ -4,49 +4,53 @@
   width: 440px;
   height: 100vh;
   position: fixed;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
   right: -512px;
   top: 0;
   z-index: 10002;
-  background-color: $color-standard;
-  box-shadow: 16px 0px 52px 0px #0e185033;
-  border-left: 0.3px solid #d9fff5;
-  padding: 40px 32px;
   transition: 200ms;
-  .title {
-    color: $color-light;
-    position: relative;
-    .title-decoration {
-      position: absolute;
-      left: -34px;
-      width: 3px;
-      bottom: 7px;
-      height: 28px;
-      background-color: $color-border;
+  .modals-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    background-color: $color-standard;
+    box-shadow: 16px 0px 52px 0px #0e185033;
+    border-left: 0.3px solid #d9fff5;
+    padding: 40px 32px;
+    overflow-y: auto;
+    .title {
+      color: $color-light;
+      position: relative;
+      .title-decoration {
+        position: absolute;
+        left: -34px;
+        width: 3px;
+        bottom: 7px;
+        height: 28px;
+        background-color: $color-border;
+      }
     }
-  }
-  h4 {
-    font-size: 24px;
-    line-height: 32px;
-    margin-bottom: 8px;
-  }
-  input,
-  textarea {
-    display: block;
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid $color-gray;
-    border-radius: 8px;
-  }
-  textarea {
-    height: 118px;
-  }
-  p {
-    color: $color-light;
-    font-size: 14px;
-    line-height: 16px;
+    h4 {
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 8px;
+    }
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid $color-gray;
+      border-radius: 8px;
+    }
+    textarea {
+      height: 118px;
+    }
+    p {
+      color: $color-light;
+      font-size: 14px;
+      line-height: 16px;
+    }
   }
 }
 
